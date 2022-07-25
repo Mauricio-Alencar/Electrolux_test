@@ -1,0 +1,11 @@
+Question 1. Imagine a situation where you have a circuit able to activate and deactivate a purely resistive load
+with a microcontroller. It is required to control the load power over time depending on the situation
+and the power cannot be instantly changed from 0% to 100%. Explain in simple words a method
+to achieve such effect, looking at both hardware and firmware aspects of the system. If an
+inductive load is used instead of a resistive load, can the same triggering method be used or do
+special precautions need to be taken?
+
+
+Ansewer:
+
+To control the load, whether resistive or inductive, you can use PWM controlling the duty cycle to supply the necessary power to the load, switching the load by IGBTs or Mosfets, with concerns about inductive loads that need a diode in antiparallel to that reverse current does not damage the power circuit, other concerns should be taken into account when switching inductive loads, particularly if torque is required, such as intelligent PWM lift so that peak current in the load is minimized, as a used Soft Starter does. . Another important point is to equate the working frequency of the PWM with the nominal frequency of the inductive load (in the case of AC loads)
